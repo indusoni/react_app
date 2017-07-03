@@ -33,13 +33,14 @@ class TicTacToe extends Component{
 
 							Object.keys(this.props.UserSettings).map((value,index)=>{
 									
-									return(<option >{value}</option>)
+									return(<option key={value}>{value}</option>)
 								}
 								)
 							
 						}
 					</select>
-					<input type='Button'  value= "Done" onClick={this.AddPlayer}/>
+					 <button type="button"  onClick={this.AddPlayer}>Done</button> 
+					
 					</div>):(<h4>No User Added .Click on <Link to={'/UserSettings'}>Add User </Link></h4>)
 
 					
@@ -53,7 +54,7 @@ class TicTacToe extends Component{
 						
 						[0,1,2].map((value)=>{
 							 return (
-								<s.TicTacToeCellContainer ><Cell row={value} col="0" /><Cell row={value} col="1" /><Cell  row={value} col="2" /></s.TicTacToeCellContainer>
+								<s.TicTacToeCellContainer key={value}><Cell row={value} col="0" /><Cell row={value} col="1" /><Cell  row={value} col="2" /></s.TicTacToeCellContainer>
 								
 
 							)

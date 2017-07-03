@@ -8,6 +8,7 @@ import TicTacToe from "./components/TicTacToe";
 import SideBar from "./components/SideBar";
 import UserSettings from "./components/UserSettings";
 import Lobby from "./components/Lobby";
+import ToDo from "./components/ToDo";
 
 const store = createStore(allReducers,{})
 
@@ -23,6 +24,7 @@ class App extends Component {
       <Route path="/Lobby" component={Lobby}/>
       <Route path="/UserSettings" component={UserSettings}/>
       <Route path="/TicTacToe" component={TicTacToe}/>
+       <Route path="/ToDo" component={ToDo}/>
       </Switch>
     </SideBar>
   </Router>

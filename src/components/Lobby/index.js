@@ -9,11 +9,12 @@ const Lobby =  props=>{
 			<div>
 			{ props.UserSettings &&
 	        	Object.keys(props.UserSettings).map((value,index)=>{
- 					return <s.usersContainer>
+ 					return <s.usersContainer key={index+1}>
  						<s.userData>{index+1}</s.userData>
  						<s.userData>{props.UserSettings[[value]].name}</s.userData>
  						<s.userData>{props.UserSettings[[value]].tagline}</s.userData>
  						<s.userData>{props.UserSettings[[value]].location}</s.userData>
+
  					</s.usersContainer>
 
 	        	})

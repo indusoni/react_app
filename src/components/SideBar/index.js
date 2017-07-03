@@ -33,7 +33,7 @@ class SideBar extends Component{
 			        	
 			        		<s.ListItem><Link to='/Lobby'>Lobby</Link></s.ListItem>
 			        		<s.ListItem><Link to='/TicTacToe'>Tic tac toe</Link></s.ListItem>
-			        		<s.ListItem><Link to='/TicTacToe'>To DOs</Link></s.ListItem>
+			        		<s.ListItem><Link to='/ToDo'>To DOs</Link></s.ListItem>
 			        		<s.ListItem><Link to='/UserSettings'>Settings</Link></s.ListItem>
 			        		
 			        	</s.List>
