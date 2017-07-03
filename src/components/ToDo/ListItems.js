@@ -31,7 +31,7 @@ class ListItems extends Component{
 							return <li key={taskValue}> 
 										
 										{this.props.source==="oldTask" && this.props.ToDo[this.props.user][taskValue]==="1" && <div>{taskValue}</div>} 
-										{this.props.source === "newTask"  && <div>{taskValue}<input type="checkbox" onChange={ (event) =>  this.markComplete(event,taskValue)  } /> <input type="button" name="remove" value="X" onClick = { (event) => this.removeTask(event,taskValue) }/>  </div> } 
+										{this.props.source === "newTask"  && <div>{taskValue}<input type="checkbox" onChange={ (event) =>  this.markComplete(event,taskValue)  } checked={this.props.ToDo[this.props.user][taskValue]==="1"?true:false}/> <input type="button" name="remove" value="X" onClick = { (event) => this.removeTask(event,taskValue) }/>  </div> } 
 									</li>
 						}
 
