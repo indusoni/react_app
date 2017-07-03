@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import ToDo from './ToDo';
 import TicTacTeo from './TicTacTeo';
 import UserSettings from './UserSettings';
@@ -9,9 +9,9 @@ import UserSettings from './UserSettings';
  * */
 
 const allReducers = combineReducers({
-    UserSettings,
-   	TicTacTeo,
-   	ToDo
+  UserSettings,
+  TicTacTeo,
+  ToDo,
 });
- 
-export default allReducers
+
+export default allReducers;

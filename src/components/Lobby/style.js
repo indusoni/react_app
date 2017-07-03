@@ -2,24 +2,22 @@ import styled from 'styled-components';
 
 const styles = {};
 styles.usersContainer = styled.div`
- display: -webkit-box;
+  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;  
+  display: flex;
   align-items: left;
- 
+
   flex-flow: row wrap;
-  
+
   font-weight: normal;
 
-  background:#e5e7e9;
+  background: #e5e7e9;
 `;
-styles.userData=styled.div`
- flex: 1  ;
+styles.userData = styled.div`
+  flex: 1;
 
-padding:5px;
-
-
+  padding: 5px;
 `;
 export default styles;
