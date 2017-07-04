@@ -8,7 +8,7 @@ const Lobby = props =>
   <div>
     {props.UserSettings &&
       Object.keys(props.UserSettings).map((value, index) =>
-        <s.usersContainer key= {props.UserSettings[value].name}>
+        <s.usersContainer key={props.UserSettings[value].name}>
           <s.userData>
             {index + 1}
           </s.userData>
@@ -28,6 +28,6 @@ const Lobby = props =>
     </h4>
   </div>;
 Lobby.propTypes = {
-  UserSettings: PropTypes.object
+  UserSettings: PropTypes.object,
 };
 export default connect(state => state)(Lobby);

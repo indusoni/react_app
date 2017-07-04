@@ -18,34 +18,31 @@ class UserSettings extends PureComponent {
   }
   submitData(e) {
     e.preventDefault();
-    const FormValue = this.refs.form.getValue();
-
-    const formData = {};
-    for (const field in FormValue) {
-      formData[field] = FormValue[field];
+    const formValue = this.refs.form.getValue();
+    if (formValue) {
+      console.log(formValue);
+      this.props.addUser(formValue);
+    } else {
+      console.log('Form has errors', this.refs.form.validate());
     }
-
-    this.props.addUser(formData);
   }
   componentDidMount() {
     this.getStates();
   }
 
   getStates() {
-    axios
-      .get('https://www.whizapi.com/api/v2/util/ui/in/indian-states-list?project-app-key=i6axz9cc8h79jy11n3a9cvx7')
-      .then(response => {
-        const locationList = {};
-        response.data.Data.forEach(locationData => {
-          locationList[locationData.Name] = locationData.Name;
-        });
-        this.FormSchema = t.struct({
-          name: t.String,
-          tagline: t.String,
-          location: t.enums({ ...locationList }),
-        });
-        this.setState({ ...this.state, location: response.data.Data });
+    axios.get('https://www.whizapi.com/api/v2/util/ui/in/indian-states-list?project-app-key=i6axz9cc8h79jy11n3a9cvx7').then(response => {
+      const locationList = {};
+      response.data.Data.forEach(locationData => {
+        locationList[locationData.Name] = locationData.Name;
       });
+      this.FormSchema = t.struct({
+        name: t.String,
+        tagline: t.String,
+        location: t.enums({ ...locationList }),
+      });
+      this.setState({ location: response.data.Data });
+    });
   }
   render() {
     return (
